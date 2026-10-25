@@ -25,4 +25,15 @@ public class ApplicationService {
     public List<Application> findAll() {
         return new ArrayList<>(applications);
     }
+
+    public Application get(long id) {
+        Application found = null;
+        for (Application application : applications) {
+            if (application.getId() == id) {
+                found = application;
+            }
+        }
+        
+        return found;
+    }
 }
