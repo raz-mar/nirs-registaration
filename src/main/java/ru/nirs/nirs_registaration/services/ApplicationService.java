@@ -33,7 +33,16 @@ public class ApplicationService {
                 found = application;
             }
         }
-        
+
         return found;
+    }
+
+    public void edit(long id, ApplicationRequest request) {
+        Application application = get(id);
+
+        if ( (application != null) && (application.getStatus() == ApplicationStatus.DRAFT)) {
+            application.setTitle(request.title());
+            application.setTheses(request.theses());
+        }
     }
 }
