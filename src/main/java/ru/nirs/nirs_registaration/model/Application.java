@@ -43,10 +43,6 @@ public class Application {
 
     // -------------------------- Сеттеры --------------------------
 
-    public void setId(long id) {
-        mId = id;
-    }
-
     public void setTitle(String title) {
         mTitle = title;
     }
