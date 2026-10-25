@@ -21,4 +21,15 @@ public class ApplicationController {
     public ResponseEntity<List<Application>> getApplications() {
         return ResponseEntity.ok(mService.findAll());
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Application> getApplication(@PathVariable long id) {
+        Application application = mService.get(id);
+
+        if (application != null) {
+            return ResponseEntity.ok(application);
+        }
+
+        return ResponseEntity.notFound().build();
+    }
 }
