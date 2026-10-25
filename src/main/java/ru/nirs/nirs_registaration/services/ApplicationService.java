@@ -45,4 +45,12 @@ public class ApplicationService {
             application.setTheses(request.theses());
         }
     }
+
+    public void delete(long id) {
+        Application application = get(id);
+
+        if (application != null) {
+            application.setStatus(ApplicationStatus.DELETED);
+        }
+    }
 }
