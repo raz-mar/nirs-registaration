@@ -2,7 +2,7 @@ package ru.nirs.nirs_registaration.model;
 
 public class Application {
 
-    private Long mId;
+    private long mId;
     private String mTitle;
     private String mTheses;
     private ApplicationStatus mStatus;
@@ -10,7 +10,7 @@ public class Application {
 
     // -------------------------- Создание объекта --------------------------
 
-    public Application(Long id, String title, String theses, ApplicationStatus status) {
+    public Application(long id, String title, String theses, ApplicationStatus status) {
         mId = id;
         mTitle = title;
         mTheses = theses;
@@ -20,7 +20,7 @@ public class Application {
 
     // -------------------------- Геттеры --------------------------
 
-    public Long getId() {
+    public long getId() {
         return mId;
     }
 
@@ -43,7 +43,7 @@ public class Application {
 
     // -------------------------- Сеттеры --------------------------
 
-    public void setId(Long id) {
+    public void setId(long id) {
         mId = id;
     }
 

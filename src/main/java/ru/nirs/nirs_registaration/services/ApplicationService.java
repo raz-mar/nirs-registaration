@@ -1,0 +1,28 @@
+package ru.nirs.nirs_registaration.services;
+
+import ru.nirs.nirs_registaration.model.Application;
+import ru.nirs.nirs_registaration.model.ApplicationRequest;
+import ru.nirs.nirs_registaration.model.ApplicationStatus;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ApplicationService {
+    private static long nextId = 0;
+    private final List<Application> applications = new ArrayList<>();
+
+    public Application submit(ApplicationRequest request) {
+        Application application = new Application(
+                                        ++nextId,
+                                        request.title(),
+                                        request.theses(),
+                                        ApplicationStatus.DRAFT);
+
+        applications.add(application);
+        return application;
+    }
+
+    public List<Application> findAll() {
+        return new ArrayList<>(applications);
+    }
+}
