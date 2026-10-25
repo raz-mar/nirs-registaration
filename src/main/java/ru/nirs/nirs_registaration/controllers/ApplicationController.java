@@ -1,13 +1,24 @@
 package ru.nirs.nirs_registaration.controllers;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import ru.nirs.nirs_registaration.model.Application;
 import ru.nirs.nirs_registaration.model.ApplicationRequest;
+import ru.nirs.nirs_registaration.services.ApplicationService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("api/applications")
 public class ApplicationController {
+    private final ApplicationService mService;
 
+    public ApplicationController(ApplicationService service) {
+        this.mService = service;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Application>> getApplications() {
+        return ResponseEntity.ok(mService.findAll());
+    }
 }
