@@ -39,4 +39,10 @@ public class ApplicationController {
         Application application = mService.submit(request);
         return ResponseEntity.created(URI.create("/api/applications/" + application.getId())).body(application);
     }
+
+   //@PutMapping("/{id}/edit")
+    //public ResponseEntity<Application> edit(@PathVariable long id, @RequestBody ApplicationRequest request) {
+        //Application application = mService.edit(id, request);
+
+    //}
 }
