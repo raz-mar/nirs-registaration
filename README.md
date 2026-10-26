@@ -9,7 +9,7 @@
 **Описание:** Отправляет новую заявку с заголовком и текстом тезисов.
 **Запрос:**
 ```powershell
-Invoke-RestMethod "http://localhost:8080/api/applications/create" -Method Post -ContentType "application/json" -Body '{"title":"...","theses":"..."}'
+invoke-restmethod "http://localhost:8080/api/applications/create" -method post -contenttype "application/json" -body '{"title":"...","theses":"..."}'
 ```
 
 ### 2. Получение всех заявок
@@ -17,7 +17,7 @@ Invoke-RestMethod "http://localhost:8080/api/applications/create" -Method Post -
 **Описание:** Возвращает список всех активных заявок в системе.
 **Запрос:**
 ```powershell
-Invoke-RestMethod "http://localhost:8080/api/applications" -Method Get
+invoke-restmethod "http://localhost:8080/api/applications" -method get
 ```
 
 ### 3. Получение заявки по ID
@@ -25,7 +25,7 @@ Invoke-RestMethod "http://localhost:8080/api/applications" -Method Get
 **Описание:** Возвращает подробную информацию о конкретной заявке по её id.
 **Запрос:**
 ```powershell
-Invoke-RestMethod "http://localhost:8080/api/applications/..." -Method Get
+invoke-restmethod "http://localhost:8080/api/applications/..." -method get
 ```
 
 ### 4. Редактирование заявки
@@ -33,7 +33,7 @@ Invoke-RestMethod "http://localhost:8080/api/applications/..." -Method Get
 **Описание:** Обновляет поля `title` и `theses` у существующей заявки.
 **Запрос:**
 ```powershell
-Invoke-RestMethod "http://localhost:8080/api/applications/.../edit" -Method Put -ContentType "application/json" -Body '{"title":"...","theses":"..."}'
+invoke-restmethod "http://localhost:8080/api/applications/.../edit" -method put -contenttype "application/json" -body '{"title":"...","theses":"..."}'
 ```
 
 ### 5. Удаление заявки
@@ -41,5 +41,5 @@ Invoke-RestMethod "http://localhost:8080/api/applications/.../edit" -Method Put 
 **Описание:** Меняет статус заявки на `DELETED`.
 **Запрос:**
 ```powershell
-Invoke-RestMethod "http://localhost:8080/api/applications/..." -Method Delete
+invoke-restmethod "http://localhost:8080/api/applications/..." -method delete
 ```
