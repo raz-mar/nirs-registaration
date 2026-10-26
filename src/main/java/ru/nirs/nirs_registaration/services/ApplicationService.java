@@ -1,5 +1,6 @@
 package ru.nirs.nirs_registaration.services;
 
+import org.springframework.stereotype.Service;
 import ru.nirs.nirs_registaration.model.Application;
 import ru.nirs.nirs_registaration.model.ApplicationRequest;
 import ru.nirs.nirs_registaration.model.ApplicationStatus;
@@ -7,6 +8,7 @@ import ru.nirs.nirs_registaration.model.ApplicationStatus;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class ApplicationService {
     private static long nextId = 0;
     private final List<Application> applications = new ArrayList<>();

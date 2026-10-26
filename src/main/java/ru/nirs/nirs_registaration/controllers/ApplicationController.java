@@ -6,6 +6,7 @@ import ru.nirs.nirs_registaration.model.Application;
 import ru.nirs.nirs_registaration.model.ApplicationRequest;
 import ru.nirs.nirs_registaration.services.ApplicationService;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -31,5 +32,11 @@ public class ApplicationController {
         }
 
         return ResponseEntity.notFound().build();
+    }
+
+    @PostMapping("create")
+    public ResponseEntity<Application> submit(@RequestBody ApplicationRequest request) {
+        Application application = mService.submit(request);
+        return ResponseEntity.created(URI.create("/api/applications/" + application.getId())).body(application);
     }
 }
