@@ -49,6 +49,6 @@ public class ApplicationController {
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable long id) {
         mService.delete(id);
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.noContent().build();
     }
 }
