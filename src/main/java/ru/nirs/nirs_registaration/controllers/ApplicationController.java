@@ -40,9 +40,9 @@ public class ApplicationController {
         return ResponseEntity.created(URI.create("/api/applications/" + application.getId())).body(application);
     }
 
-   //@PutMapping("/{id}/edit")
-    //public ResponseEntity<Application> edit(@PathVariable long id, @RequestBody ApplicationRequest request) {
-        //Application application = mService.edit(id, request);
-
-    //}
+   @PutMapping("/{id}/edit")
+    public ResponseEntity<Application> edit(@PathVariable long id, @RequestBody ApplicationRequest request) {
+        Application application = mService.edit(id, request);
+        return ResponseEntity.ok(application);
+    }
 }
