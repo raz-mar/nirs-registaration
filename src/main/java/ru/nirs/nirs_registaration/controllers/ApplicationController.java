@@ -46,7 +46,7 @@ public class ApplicationController {
         return ResponseEntity.ok(application);
     }
 
-    @DeleteMapping("/{id}/delete")
+    @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable long id) {
         mService.delete(id);
         return ResponseEntity.notFound().build();

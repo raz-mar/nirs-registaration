@@ -55,6 +55,7 @@ public class ApplicationService {
 
         if (application != null) {
             application.setStatus(ApplicationStatus.DELETED);
+            applications.remove(application);
         }
     }
 }
